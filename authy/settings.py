@@ -20,7 +20,7 @@ import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('SECRET_KEY_2')
+SECRET_KEY = os.environ.get('SECRET_KEY_A')
 
 # from django.core.exceptions import ImproperlyConfigured
 
