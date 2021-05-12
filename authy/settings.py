@@ -160,19 +160,19 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 
-REST_FRAMEWORK = {
-    # 'DEFAULT_FILTER_BACKENDS': [
-    #     'django_filters.rest_framework.DjangoFilterBackend'
-    # ],
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ],
-}
+# REST_FRAMEWORK = {
+#     # 'DEFAULT_FILTER_BACKENDS': [
+#     #     'django_filters.rest_framework.DjangoFilterBackend'
+#     # ],
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework_simplejwt.authentication.JWTAuthentication',
+#     ],
+# }
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
-    'ROTATE_REFRESH_TOKEN': False
-}
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
+#     'ROTATE_REFRESH_TOKEN': False
+# }
 
 
 AUTH_USER_MODEL = 'user.User'
