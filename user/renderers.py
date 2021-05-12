@@ -18,7 +18,7 @@ class UserJSONRenderer(JSONRenderer):
 
         if token is not None and isinstance(token, bytes) :
             
-            data['token'] = token.decode('utf-8')
+            data['token'] = token
         
         temp=data.copy()
         finaldata = OrderedDict(sorted(temp.items()))
