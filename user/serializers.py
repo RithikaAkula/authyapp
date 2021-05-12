@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from django.contrib.auth import authenticate
 from rest_framework import status
-
 from .models import User
 
 
@@ -17,7 +16,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-
         fields = ['id', 'email', 'name', 'password', 'token']
 
     def create(self, validated_data):
@@ -25,6 +23,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
+
     email = serializers.CharField(max_length=255)
     name = serializers.CharField(max_length=255, read_only=True)
     password = serializers.CharField(max_length=128, write_only=True)
@@ -32,6 +31,7 @@ class LoginSerializer(serializers.Serializer):
     id = serializers.ReadOnlyField()
 
     def validate(self, data):
+
         email = data.get('email', None)
         password = data.get('password', None)
 
@@ -55,3 +55,4 @@ class LoginSerializer(serializers.Serializer):
             'name': user.name,
             'token': user.token,
         }
+        

@@ -11,29 +11,15 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-from datetime import timedelta
 import os
 import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY_A')
-
-# from django.core.exceptions import ImproperlyConfigured
-
-# with open(os.path.join(BASE_DIR, 'secrets.json')) as secrets_file:
-#     secrets = json.load(secrets_file)
-
-# def get_secret(setting, secrets=secrets):
-#     """Get secret setting or fail with ImproperlyConfigured"""
-#     try:
-#         return secrets[setting]
-#     except KeyError:
-#         raise ImproperlyConfigured("Set the {} setting".format(setting))
-# SECRET_KEY = get_secret('SECRET_KEY')
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -104,13 +90,6 @@ WSGI_APPLICATION = 'authy.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -159,22 +138,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-# REST_FRAMEWORK = {
-#     # 'DEFAULT_FILTER_BACKENDS': [
-#     #     'django_filters.rest_framework.DjangoFilterBackend'
-#     # ],
-#     'DEFAULT_AUTHENTICATION_CLASSES': [
-#         'rest_framework_simplejwt.authentication.JWTAuthentication',
-#     ],
-# }
-
-# SIMPLE_JWT = {
-#     'ACCESS_TOKEN_LIFETIME': timedelta(days=7),
-#     'ROTATE_REFRESH_TOKEN': False
-# }
-
-
 AUTH_USER_MODEL = 'user.User'
+
 
 django_heroku.settings(locals())

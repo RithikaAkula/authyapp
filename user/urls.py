@@ -1,8 +1,6 @@
 from django.urls import path, include
-# from . import views
 from .views import LoginAPIView, RegistrationAPIView
 from rest_framework import routers
-# from rest_framework_simplejwt.views import TokenRefreshView
 from advisor.views import AdvisorListViewSet
 from booking.views import BookingViewSet, BookingListViewSet
 

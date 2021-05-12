@@ -3,6 +3,7 @@ from rest_framework.renderers import JSONRenderer
 
 
 class BookingJSONRenderer(JSONRenderer):
+
     charset = 'utf-8'
 
     def render(self, data, media_type=None, renderer_context=None):
@@ -11,5 +12,6 @@ class BookingJSONRenderer(JSONRenderer):
                     'user_bookings': data,
                 }
         data = response_dict
+
         return json.dumps(response_dict)
 

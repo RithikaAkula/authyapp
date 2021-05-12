@@ -1,8 +1,7 @@
 from django.db import models
-# from django.contrib.auth.models import User
-from rest_framework.generics import RetrieveAPIView
 from advisor.models import Advisor
 from user.models import User
+
 
 class Booking(models.Model):
     

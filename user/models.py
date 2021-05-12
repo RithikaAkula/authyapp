@@ -1,9 +1,6 @@
 from django.db import models
-from django.db import models
 import jwt
-
 from datetime import datetime, timedelta
-
 from django.conf import settings
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
@@ -46,18 +43,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     name = models.CharField(db_index=True, max_length=60, unique=True)
     email = models.EmailField(db_index=True, unique=True)
-
     is_active = models.BooleanField(default=True)
-
     is_staff = models.BooleanField(default=False)
-
     created_at = models.DateTimeField(auto_now_add=True)
-
     updated_at = models.DateTimeField(auto_now=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['name']
-
 
     objects = UserManager()
 
@@ -82,6 +74,5 @@ class User(AbstractBaseUser, PermissionsMixin):
             'exp': dt.utcfromtimestamp(dt.timestamp())
         }, settings.SECRET_KEY, algorithm='HS256')
 
-        # return token.dcecode('utf-8')
         return token
 
