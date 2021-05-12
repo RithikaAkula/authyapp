@@ -9,6 +9,8 @@ from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
 from django.db import models
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'authy.settings')
 
 
 class UserManager(BaseUserManager):
