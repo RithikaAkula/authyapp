@@ -14,6 +14,7 @@ from pathlib import Path
 from datetime import timedelta
 import os
 import json
+import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -47,7 +48,7 @@ SECRET_KEY = get_secret('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['callbookingapi.herokuapp.com']
 
 
 # Application definition
@@ -174,3 +175,5 @@ SIMPLE_JWT = {
 
 
 AUTH_USER_MODEL = 'user.User'
+
+django_heroku.settings(locals())
