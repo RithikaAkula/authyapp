@@ -82,4 +82,6 @@ class User(AbstractBaseUser, PermissionsMixin):
             'exp': dt.utcfromtimestamp(dt.timestamp())
         }, settings.SECRET_KEY, algorithm='HS256')
 
-        return token.decode('utf-8')
+        # return token.dcecode('utf-8')
+        return token
+
